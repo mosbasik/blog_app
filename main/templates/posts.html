@@ -1,0 +1,12 @@
+{% for post in posts %}
+	<article id="{{ post.id }}">
+		<h1>{{ post.title }}</h1>
+		<h2>by "{{ post.author }}"</h2>
+		{{ post.text }}
+
+		<footer>
+			<p>Posted on {{ post.date }}</p>
+			<button class="delete">Delete</button>
+		</footer>
+	</article>
+{% endfor %}
