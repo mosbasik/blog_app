@@ -11,13 +11,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Such blog!</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'css/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{% static 'css/clean-blog.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/clean-blog.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -35,44 +36,10 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{% url 'initial' %}">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Sample Post</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    {% include "navbar.html" with admin=False %}
 
     {% block content %}
-    {% endblock content %}
+    {% endblock %}
 
     <!-- Footer -->
     <footer>
@@ -105,24 +72,67 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="copyright text-muted">Copyright &copy; Peter Henry 2015</p>
                 </div>
             </div>
         </div>
     </footer>
 
+
     <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'css/bootstrap/js/bootstrap.js' %}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{% static 'js/clean-blog.min.js' %}"></script>
+    <script src="{% static 'js/clean-blog.js' %}"></script>
 
-    <!-- The blog.js that we wrote before-->
-    <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+    <script src="{% static 'js/blog.js' %}"></script>
 
 </body>
 
 </html>
+
+
+
+<!-- {# {% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+
+        <title>I'm a blog! I'm hip!</title>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <h1>This is a blog. A blog, this is. Holy shit what a blog.</h1>
+        <hr>
+
+
+
+
+        <button id="load-posts">Load posts?</button>
+        </br>
+        </br>
+
+        <img id="loader" src="{% static 'img/g0v.gif' %}">
+
+        <div id="posts"></div>
+    </div>
+
+
+
+
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="{% static 'js/blog.js' %}"></script>
+</body>
+
+</html> #}
+-->

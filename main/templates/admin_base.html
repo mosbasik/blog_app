@@ -1,0 +1,22 @@
+
+{% load staticfiles %}
+
+<head>
+        
+ <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+ </head>
+
+<body>
+
+{% include "navbar.html" with admin=True %}
+
+{% block content %}
+{% endblock %}
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="{% static 'css/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'js/blog.js' %}"></script>
+</body>
